@@ -1,7 +1,4 @@
 #
-# Author:: Ilja Bobkevic <ilja.bobkevi@unibet.com>
-#
-# Copyright 2015, North Development AB
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +17,7 @@ require 'kitchen/transport/ssh'
 
 module Kitchen
   module Transport
-    class Rsync < Ssh
+    class Rsync_win < Ssh
 
       def create_new_connection(options, &block)
         if @connection
@@ -34,6 +31,7 @@ module Kitchen
 
       class Connection < Ssh::Connection
         def upload(locals, remote)
+          remote = remote.sub(/^([A-z]):\//, '/cygdrive/\1/')
           Array(locals).each do |local|
             full_remote = File.join(remote, File.basename(local))
             recursive = File.directory?(local)
