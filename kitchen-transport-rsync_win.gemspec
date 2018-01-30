@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.description = 'Additional Test kitchen transport using rsync, modified to work with cygwin'
   spec.summary = spec.description
   spec.homepage = 'https://github.com/dschelchkov/kitchen-transport-rsync_win'
-  spec.license = 'Apache 2'
+  spec.license = 'Apache 2.0'
 
   spec.files = `git ls-files`.split($/)
   spec.executables = []
