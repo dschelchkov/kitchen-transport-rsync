@@ -16,7 +16,7 @@
 module Kitchen
   module Transport
     module Rsync_win
-      VERSION = '0.0.1'
+      VERSION = '0.0.2'
     end
   end
 end

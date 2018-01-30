@@ -17,7 +17,7 @@ require 'kitchen/transport/ssh'
 
 module Kitchen
   module Transport
-    class Rsync_win < Ssh
+    class RsyncWin < Ssh
 
       def create_new_connection(options, &block)
         if @connection
